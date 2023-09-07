@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../public/LOGO.png";
+---
+
+<section class="landing-section h-screen w-screen relative text-center overflow-hidden" data-header-color="#bea347">
+    <div class="pt-12">
+        <div class="top-10 container flex flex-col justify-center p-6 mx-auto sm:py-25 lg:py-24 lg:flex-row lg:justify-between">
+            <div class="pt-28">
+                <div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                    <Image class="object-contain h-60 sm:h-70 lg:h-80 xl:h-96 2xl:h-112" src={logo} alt="logo" quality="max" />
+                </div>
+            </div>
+            <div class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+                <h1 class="text-5xl font-bold leadi sm:text-6xl">Who are
+                    <span class="dark:text-[#bea347]">we</span>?
+                </h1>
+                <p class="mt-6 mb-8 text-lg sm:mb-12">Community Construction Group, LLC, headquartered in Roswell, Georgia, is a General Contractor specializing in the construction, renovation, and restoration of multi-family properties. The CCG team members have performed work on multi-family properties throughout the Southeast for numerous Owners, Developers and Property Managers, and CCG is growing its licensing base to support customer needs as they expand their portfolios. With an emphasis on, and proven experience in, affordable housing construction and renovation projects, CCG is a uniquely and fully qualified construction partner, focused on fostering long-term business relationships by delivering consistent, quality work and building value for our customers.
+                </p>
+                <div class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+                    <a class="border-[3px] border-[#bea347] bg-[#bea347]/5 backdrop-blur-sm text-sm rounded font-medium text-black px-12 py-2 inline-block hover:bg-[#bea347] hover:text-white transition-colors duration-300" href="#">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

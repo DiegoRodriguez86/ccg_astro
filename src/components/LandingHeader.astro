@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../public/LOGO.png";
+---
+
+<header
+class="py-4 px-10 flex items-center fixed top-0 w-full justify-between z-40"
+id="landing-header"
+>
+<div class="flex flex-grow basis-0">
+    <Image
+        src={logo}
+        alt="ccg_logo"
+        width="120"
+        height="120"
+        quality="max"
+    />
+</div>
+<nav>
+    <ul
+        class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+    >
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Abaut CCG</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+<nav class="flex flex-grow justify-end basis-0">
+    <ul
+        class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+    >
+        <li><a href="#">Call us</a></li>
+        <li><a href="#">Get quote</a></li>
+    </ul>
+</nav>
+</header>
+
+<script>
+    const headerEL = document.querySelector('#landing-header') as HTMLElement
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.90
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const { isIntersecting } = entry
+            if(isIntersecting){
+                const color = entry.target.getAttribute('data-header-color')
+                headerEL.style.color = color
+            }
+        })
+    }, observerOptions)
+
+    const sectionsElements = document.querySelectorAll(".landing-section")
+    sectionsElements.forEach(section => observer.observe(section))
+</script>

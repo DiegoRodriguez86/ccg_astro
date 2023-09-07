@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import HomeSection from "../components/HomeSection.astro";
+import WhoAreSection from "../components/WhoAreSection.astro";
+---
+
+<Layout title="Welcome to CCG">
+	<LandingHeader/>
+	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-smooth">
+		<div class="snap-center">
+			<HomeSection/>
+		</div>
+		<div class="snap-center">
+			<WhoAreSection/>
+		</div>
+	</main>
+</Layout>
